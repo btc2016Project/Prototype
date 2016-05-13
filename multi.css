@@ -1,0 +1,89 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+*{font-family: メイリオ;}
+.top_search{
+  display: block;
+  position: absolute;
+  left:500px;
+
+}
+
+.header{
+  width: 1200px;
+  height:100px;
+  background-color:#3B5998 ;
+}
+.header h1{
+  color: #E7E8F2;
+}
+
+.container{
+  width:1200px;
+  background-color: #E7E8F2;
+  display: table;
+  width: auto;
+}
+.side_menu{
+  width:200px;
+  background-color:#E7E8F2;
+  border-right-color:#FFFFFF;
+  border-right-width:2px;
+  border-right-style:solid;
+  display: table-cell;
+}
+.side_menu a{
+  display: block;
+}
+
+
+.main{
+  width: 1000px;
+  left:200px;
+  background-color:#E7E8F2;
+  display: table-cell;
+}
+
+.title{
+  background-color: white;
+  margin-top: 30px;
+}
+
+div.inline{
+  display: inline-block;
+  width: 150px;
+  border: solid 1px;
+  font-family:monospace;
+}
+div.temp{
+  width:800px;
+}
+
+div.list a:hover {color:#FF0000; background:#AA0000;}
+
+.footer{
+  width: 1200px;
+background-color:#3B5998 ;
+height:50px;
+}
+.footer p{
+  color: #E7E8F2;
+  margin: 0px;
+}
+body{
+font-family:'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif !important;
+}

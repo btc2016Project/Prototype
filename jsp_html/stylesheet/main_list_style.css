@@ -1,0 +1,11 @@
+div.inline{
+  display: inline-block;
+  width: 150px;
+  border: solid 1px;
+  font-family:monospace;
+}
+div.temp{
+  width:800px;
+}
+
+div.list a:hover {color:#FF0000; background:#AA0000;}
