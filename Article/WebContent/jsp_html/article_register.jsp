@@ -2,9 +2,9 @@
 
 <html>
 <head>
-<link href="stylesheet/article_style.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/jsp_html/stylesheet/article_style.css" rel="stylesheet"
 	type="text/css">
-<link href="stylesheet/main_list_style.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/stylesheet/main_list_style.css" rel="stylesheet"
 	type="text/css">
 <title>includeテスト</title>
 </head>
@@ -35,7 +35,7 @@
 				<p>タイトル</p>
 					<input type=text name="">
 				</div>
-				
+
 				<div class="confirm">
 				<input type="button" value="戻る">
 				<input type="button" value="確認">

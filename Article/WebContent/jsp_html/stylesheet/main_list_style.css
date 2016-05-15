@@ -9,3 +9,6 @@ div.temp{
 }
 
 div.list a:hover {color:#FF0000; background:#AA0000;}
+
+.article_list{border-collapse: collapse;
+border:1px solid;}
