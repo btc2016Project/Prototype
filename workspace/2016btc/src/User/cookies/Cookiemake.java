@@ -1,4 +1,4 @@
-package cookies;
+package User.cookies;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

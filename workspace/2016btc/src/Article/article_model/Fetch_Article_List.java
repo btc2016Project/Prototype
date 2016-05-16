@@ -1,4 +1,4 @@
-package article_model;
+package Article.article_model;
 
 import java.io.IOException;
 import java.sql.DriverManager;
@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bean.Article;
+import Article.bean.Article;
+
 
 /**
  * Servlet implementation class Fetch_Article_List
@@ -83,7 +84,7 @@ public class Fetch_Article_List extends HttpServlet {
 			}
 
 			request.setAttribute("article", list);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/jsp_html/article_list.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Article/article_list.jsp");
 			requestDispatcher.forward(request, response);
 
 			rs.close();

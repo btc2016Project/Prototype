@@ -1,4 +1,4 @@
-package webApplication11;
+package User.webApplication;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import db.DBmanager;
+import User.db.DBmanager;
 
 public class LoginServlet extends HttpServlet {
     /**
@@ -57,8 +57,8 @@ public class LoginServlet extends HttpServlet {
 	    conn = DBmanager.getConn();
 	    st = conn.createStatement();
 	    // sql文 DB上のすべてのアカウントおよびパスワードから一致検索
-	    String sql = "SELECT * FROM ITMEMBER where accname = \'" + un
-		    + "\' " + "and pass =\'" + pw + "\'";
+	    String sql = "SELECT * FROM `user_master` where `user_name` = \'" + un
+		    + "\' " + "and `user_password` =\'" + pw + "\'";
 	    // Resultsetの実行
 	    rs = st.executeQuery(sql);
 
@@ -89,13 +89,13 @@ public class LoginServlet extends HttpServlet {
 		    // 記事ページ(トップページ)へ
 		    out.println("<p><a href=\"./UserInf\">登録情報の確認</a></p>");
 		    // ログイン画面へ
-		    out.println("<p><a href=\"./Login.html\">ログイン画面に戻る</a>");
+		    out.println("<p><a href=\"./User/Login.html\">ログイン画面に戻る</a>");
 		    out.println("</BODY>");
 		    out.println("</HTML>");
 		} else {
 		    // ログインミス→ログイン画面に戻る
 		    out.println("NG パスワードまたはユーザー名が違います");
-		    out.println("<p><a href=\"./Login.html\">ログイン画面に戻る</a>");
+		    out.println("<p><a href=\"./User/Login.html\">ログイン画面に戻る</a>");
 		    out.println("</BODY>");
 		    out.println("</HTML>");
 		}

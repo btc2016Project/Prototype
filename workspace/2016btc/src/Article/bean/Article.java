@@ -1,4 +1,4 @@
-package bean;
+package Article.bean;
 
 
 public class Article {
@@ -23,9 +23,9 @@ public class Article {
 		this.regist_user_id=regist_user_id;
 		this.regist_date =regist_date;
 	}
-	
-	
-	
+
+
+
 	public void setArticle_category(String article_category) {
 		this.article_category = article_category;
 	}
@@ -33,9 +33,9 @@ public class Article {
 		return article_category;
 	}
 
-	
-	
-	
+
+
+
 	public void setArticle_id(int article_id) {
 		this.article_id = article_id;
 	}
@@ -43,9 +43,9 @@ public class Article {
 		return article_id;
 	}
 
-	
-	
-	
+
+
+
 	public void setArticle_title(String article_title) {
 		this.article_title = article_title;
 	}
@@ -53,9 +53,9 @@ public class Article {
 		return article_title;
 	}
 
-	
-	
-	
+
+
+
 	public void setArticle_url(String article_url) {
 		this.article_url = article_url;
 	}
@@ -63,9 +63,9 @@ public class Article {
 		return article_url;
 	}
 
-	
-	
-	
+
+
+
 	public void setRegist_date(String regist_date) {
 		this.regist_date = regist_date;
 	}
@@ -73,16 +73,16 @@ public class Article {
 		return regist_date;
 	}
 
-	
-	
-	
+
+
+
 	public void setRegist_user_id(int regist_user_id) {
 		this.regist_user_id = regist_user_id;
 	}
 	public int getRegist_user_id() {
 		return regist_user_id;
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public static <T> T autoCast(Object obj) {
 	    T castObj = (T) obj;

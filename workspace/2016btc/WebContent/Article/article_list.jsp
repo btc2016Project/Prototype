@@ -1,15 +1,15 @@
 <%@ page contentType="text/html;charset=utf-8"%>
-<%@ page import="bean.Article"%>
+<%@ page import="Article.bean.Article"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 
 <html>
 <head>
 <link
-	href="<%=request.getContextPath()%>/jsp_html/stylesheet/article_style.css"
+	href="<%=request.getContextPath()%>/Article/stylesheet/article_style.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="<%=request.getContextPath()%>/jsp_html/stylesheet/main_list_style.css"
+	href="<%=request.getContextPath()%>/Article/stylesheet/main_list_style.css"
 	rel="stylesheet" type="text/css">
 <title>includeテスト</title>
 </head>
