@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation
-    ="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
-      <display-name>btcPro</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>2016btc</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
@@ -11,7 +9,26 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-
+  <servlet>
+    <description></description>
+    <display-name>Article_List_Action</display-name>
+    <servlet-name>Article_List_Action</servlet-name>
+    <servlet-class>article_controll.Article_List_Action</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Article_List_Action</servlet-name>
+    <url-pattern>/Article_List_Action</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Fetch_Article_List</display-name>
+    <servlet-name>Fetch_Article_List</servlet-name>
+    <servlet-class>article_model.Fetch_Article_List</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Fetch_Article_List</servlet-name>
+    <url-pattern>/Fetch_Article_List</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>webApplication11.LoginServlet</servlet-class>
