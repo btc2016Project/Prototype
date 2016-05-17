@@ -1,3 +1,5 @@
+<%--@author aoyama 05/14 --%>
+
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="Article.bean.Article"%>
 <%@ page import="java.util.ArrayList"%>
@@ -6,23 +8,23 @@
 <html>
 <head>
 <link
-	href="<%=request.getContextPath()%>/Article/stylesheet/article_style.css"
+	href="<%=request.getContextPath()%>/Article/stylesheet/ArticleStyle.css"
 	rel="stylesheet" type="text/css">
 <link
-	href="<%=request.getContextPath()%>/Article/stylesheet/main_list_style.css"
+	href="<%=request.getContextPath()%>/Article/stylesheet/MainListStyle.css"
 	rel="stylesheet" type="text/css">
 <title>includeテスト</title>
 </head>
 <body>
 	<div class="contents">
-		<%@ include file="template/header.jsp"%>
+		<%@ include file="template/Header.jsp"%>
 		<div class="container">
-			<%@ include file="template/side_menu.jsp"%>
+			<%@ include file="template/SideMenu.jsp"%>
 			<div class="main">
 				<h2>記事一覧</h2>
 				<div class="search">
 					<h3 class="title">記事検索</h3>
-					<form action="<%=request.getContextPath()%>/Article_List_Action"
+					<form action="<%=request.getContextPath()%>/ArticleListAction"
 						method="get">
 						<p>
 							<select name="category">
@@ -41,7 +43,7 @@
 					<%
 						List<Article> article = (ArrayList) request.getAttribute("article");
 					%>
-					<table  class="article_list">
+					<table  class="ArticleList">
 						<thead>
 							<tr>
 								<td>タイトル</td>
@@ -55,10 +57,10 @@
 								for (Article list : article) {
 							%>
 							<tr>
-								<td class="article_list"><%=list.getArticle_title()%></td>
-								<td class="article_list"><a href=<%=list.getArticle_url()%>><%=list.getArticle_url()%></a></td>
-								<td class="article_list"><%=list.getRegist_user_id()%><br> <%=list.getRegist_date()%></td>
-								<td class="article_list"><%=list.getArticle_category()%></td>
+								<td class="ArticleList"><%=list.getArticle_title()%></td>
+								<td class="ArticleList"><a href=<%=list.getArticle_url()%>><%=list.getArticle_url()%></a></td>
+								<td class="ArticleList"><%=list.getRegist_user_id()%><br> <%=list.getRegist_date()%></td>
+								<td class="ArticleList"><%=list.getArticle_category()%></td>
 							</tr>
 							<%
 								}
@@ -71,7 +73,7 @@
 				</div>
 			</div>
 		</div>
-		<%@ include file="template/footer.jsp"%>
+		<%@ include file="template/Footer.jsp"%>
 	</div>
 </body>
 </html>

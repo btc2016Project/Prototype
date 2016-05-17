@@ -18,15 +18,16 @@ import Article.bean.Article;
 
 
 /**
- * Servlet implementation class Fetch_Article_List
+ * @author aoyama 05/14
+ * Servlet implementation class FetchArticleList
  */
-public class Fetch_Article_List extends HttpServlet {
+public class FetchArticleList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public Fetch_Article_List() {
+	public FetchArticleList() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -84,7 +85,7 @@ public class Fetch_Article_List extends HttpServlet {
 			}
 
 			request.setAttribute("article", list);
-			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Article/article_list.jsp");
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Article/ArticleList.jsp");
 			requestDispatcher.forward(request, response);
 
 			rs.close();

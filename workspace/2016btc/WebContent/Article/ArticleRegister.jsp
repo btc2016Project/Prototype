@@ -1,18 +1,20 @@
+<%--@author aoyama 05/14 --%>
+
 <%@ page contentType="text/html;charset=utf-8"%>
 
 <html>
 <head>
-<link href="<%=request.getContextPath() %>/jsp_html/stylesheet/article_style.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/Article/stylesheet/ArticleStyle.css" rel="stylesheet"
 	type="text/css">
-<link href="<%=request.getContextPath() %>/stylesheet/main_list_style.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/Article/stylesheet/MainListStyle.css" rel="stylesheet"
 	type="text/css">
 <title>includeテスト</title>
 </head>
 <body>
 	<div class="contents">
-		<%@ include file="template/header.jsp"%>
+		<%@ include file="template/Header.jsp"%>
 		<div class="container">
-			<%@ include file="template/side_menu.jsp"%>
+			<%@ include file="template/SideMenu.jsp"%>
 			<div class="main">
 				<h2>記事情報登録</h2>
 				<div>
@@ -42,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-		<%@ include file="template/footer.jsp"%>
+		<%@ include file="template/Footer.jsp"%>
 	</div>
 </body>
 </html>

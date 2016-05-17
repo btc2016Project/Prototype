@@ -1,4 +1,4 @@
-package Article.article_controll;
+﻿package Article.article_controll;
 
 import java.io.IOException;
 
@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Article_List_Action
+ *@author aoyama 05/14
+ *Servlet implementation class ArticleListAction
  */
-public class Article_List_Action extends HttpServlet {
+public class ArticleListAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -25,16 +26,13 @@ public class Article_List_Action extends HttpServlet {
 		RequestDispatcher requestDispatcher;
 		if (request.getParameterNames() != null) {
 			// データベース接続サーブレットにフォワード
-			System.out.println("データ接続します");
-			requestDispatcher = request.getRequestDispatcher("/Fetch_Article_List");
+			requestDispatcher = request.getRequestDispatcher("/FetchArticleList");
 			requestDispatcher.forward(request, response);
 		} else {
-			System.out.println("普通に遷移sます");
 			// パラメータの引き渡しがなければ、全一覧にフォワード
-			requestDispatcher = request.getRequestDispatcher("/jsp_html/article_list.jsp");
+			requestDispatcher = request.getRequestDispatcher("/jsp_html/ArticleList.jsp");
 			requestDispatcher.forward(request, response);
 		}
-
 	}
 
 	/**

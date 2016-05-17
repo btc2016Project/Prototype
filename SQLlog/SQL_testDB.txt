@@ -1,3 +1,6 @@
+--ì¬Ò ÂR 05/14
+
+
 CREATE TABLE `prototype`.`user_master` ( 
 `user_id` INT NOT NULL , 
 `user_password` VARCHAR(15) NOT NULL , 

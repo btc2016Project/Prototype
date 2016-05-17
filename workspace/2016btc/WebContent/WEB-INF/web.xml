@@ -11,23 +11,23 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Article_List_Action</display-name>
-    <servlet-name>Article_List_Action</servlet-name>
-    <servlet-class>Article.article_controll.Article_List_Action</servlet-class>
+    <display-name>ArticleListAction</display-name>
+    <servlet-name>ArticleListAction</servlet-name>
+    <servlet-class>Article.article_controll.ArticleListAction</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Article_List_Action</servlet-name>
-    <url-pattern>/Article_List_Action</url-pattern>
+    <servlet-name>ArticleListAction</servlet-name>
+    <url-pattern>/ArticleListAction</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>Fetch_Article_List</display-name>
-    <servlet-name>Fetch_Article_List</servlet-name>
-    <servlet-class>Article.article_model.Fetch_Article_List</servlet-class>
+    <display-name>FetchArticleList</display-name>
+    <servlet-name>FetchArticleList</servlet-name>
+    <servlet-class>Article.article_model.FetchArticleList</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Fetch_Article_List</servlet-name>
-    <url-pattern>/Fetch_Article_List</url-pattern>
+    <servlet-name>FetchArticleList</servlet-name>
+    <url-pattern>/FetchArticleList</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>LoginServlet</servlet-name>

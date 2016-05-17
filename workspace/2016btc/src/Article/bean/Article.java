@@ -1,6 +1,11 @@
 package Article.bean;
 
-
+/**
+ *
+ *
+ * @author aoyama 05/14
+ *
+ */
 public class Article {
 
 	private int article_id;
