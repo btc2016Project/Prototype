@@ -14,5 +14,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.39-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/pleiades/pleiades/eclipse/plugins/tk.eclipse.plugin.htmleditor_2.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/pleiades/pleiades/eclipse/plugins/tk.eclipse.plugin.struts_2.0.7.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,7 +1,7 @@
 package Article.article_model;
 
 import java.io.IOException;
-import java.sql.DriverManager;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Article.bean.Article;
+import common.DBManager;
 
 
 /**
@@ -42,11 +43,9 @@ public class FetchArticleList extends HttpServlet {
 
 		// データアクセスのパート
 		try {
-			Class.forName("com.mysql.jdbc.Driver").newInstance();
+			Connection con = DBManager.getConn();
 
-			// MySQLに接続
-			java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/prototype", "root", "");
-			System.out.println("MySQLに接続できました。");
+
 
 			String sql = "SELECT * FROM `article_master` WHERE `article_title` LIKE ? AND `article_category`= ?";
 
@@ -91,12 +90,6 @@ public class FetchArticleList extends HttpServlet {
 			rs.close();
 			ps.close();
 
-		} catch (InstantiationException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
