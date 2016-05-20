@@ -25,11 +25,12 @@ CREATE TABLE `prototype`.`user_favrite` (
      FOREIGN KEY (`fav_article_id`) REFERENCES `article_master`(`article_id`));
 
 CREATE TABLE `prototype`.`article_comment` (
+    `article_comment_id` INT(10) NOT NULL , 
     `article_id` INT(10) NOT NULL , 
     `article_comment` VARCHAR(255) NOT NULL , 
     `comment_user_id` INT NOT NULL , 
     `comment_date` DATE NOT NULL , 
-    PRIMARY KEY (`article_id`),
+    PRIMARY KEY (`article_comment_id`),
     FOREIGN KEY (`comment_user_id`) REFERENCES `user_master`(`user_id`),
     FOREIGN KEY (`article_id`) REFERENCES `article_master`(`article_id`)
 );

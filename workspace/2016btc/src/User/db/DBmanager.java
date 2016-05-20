@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class DBmanager {
 
 	/**
-	 * DBと接続する
-	 *
+	 * DBと接続する　Oracle ver.  研修環境でのtest用なので適宜削除
+	 *@author okamoto
 	 * @return DBコネクション
 	 * @throws ClassNotFoundException
 	 * @throws SQLException
