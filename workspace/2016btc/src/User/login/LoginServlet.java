@@ -15,18 +15,17 @@ import javax.servlet.http.HttpSession;
 
 import User.db.DBmanager;
 import User.validateCheck.InputValidate;
+import common.DBManager;
 
 public class LoginServlet extends HttpServlet {
     /**
      * LoginServlet ログイン
      * @author okamoto
-     * もう少し他に分けられるようにします
+     *
      * struts使用前
      */
     private static final long serialVersionUID = 1L;
     private Connection conn;
-    private Statement st;
-    private ResultSet rs;
 
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -59,12 +58,15 @@ public class LoginServlet extends HttpServlet {
 	// 入力チェック missがあれば再度Loginへ
 	InputValidate.inputCheck(un, pw, session, request, response);
 	try {
-		//MySQL verに変更
-	    conn = User.db.DBmanager.getConn();
-	    st = conn.createStatement();
-	    String sql = "SELECT * FROM ITMEMBER where accname = \'" + un
-		    + "\' " + "and pass =\'" + pw + "\'";
-	    rs = st.executeQuery(sql);
+
+		Connection con = DBManager.getConn();
+	    Statement st = con.createStatement();
+
+	    String sql = "SELECT * FROM user_master where user_name = \'" + un
+		    + "\' " + "and user_password =\'" + pw + "\'";
+
+	    ResultSet rs = st.executeQuery(sql);
+
 	    if (rs.next() == true) {
 		// セッションオブジェクトに保存する
 		session.setAttribute("username", un);
@@ -76,24 +78,13 @@ public class LoginServlet extends HttpServlet {
 		session.setAttribute("errorStatusMiss", "NotAuth");
 		url = "/Login.jsp";
 	    }
+	    st.close();
+	    rs.close();
 	} catch (SQLException e) {
 	    e.printStackTrace();
 	} catch (ClassNotFoundException e) {
 	    e.printStackTrace();
 	} finally {
-	    if (rs != null) {
-		try {
-		    rs.close();
-		} catch (SQLException e) {
-		    e.printStackTrace();
-		}
-		if (st != null) {
-		    try {
-			st.close();
-		    } catch (SQLException e) {
-			e.printStackTrace();
-		    }
-		}
 		DBmanager.close(conn);
 	    }
 	    // 入力チェックでミスなしの場合、urlで指定した遷移先へ
@@ -104,4 +95,3 @@ public class LoginServlet extends HttpServlet {
 	    }
 	}
     }
-}

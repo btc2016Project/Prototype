@@ -18,7 +18,7 @@ if(session.getAttribute("errorStatusLength")=="NotAuth"){
     %>
     UserName or Password Length MISS
 <%}%>
-   <FORM method="POST" action="<%=request.getContextPath() %>/LoginServlet">
+   <FORM method="POST" action="<%=request.getContextPath()%>/LoginServlet">
 <p>UserName : <INPUT type="text" name="username"></p>
   <p>Password : <INPUT type="password" name="password"></p>
       <INPUT type="submit" value="SEND">
