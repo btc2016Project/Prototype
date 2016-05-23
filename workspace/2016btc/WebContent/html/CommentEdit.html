@@ -1,0 +1,71 @@
+<!--@author 遠藤 5/23 -->
+<!-- コメント編集画面を適当に作ってみました。詳しくはおいおいお願いします。-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link href="stylesheet/ArticleStyle.css"
+			rel="stylesheet"
+			type="text/css">
+		<link href="stylesheet/MainListStyle.css"
+			rel="stylesheet"
+			type="text/css">
+		<title>indexテスト
+		</title>
+	</head>
+	<body>
+		<div class="contents">
+		<div class="header">
+		<h1>
+			<a href="index.html">2016Project
+			</a>
+		</h1>
+		<form class="top_search"
+			action="ArticleList1.html"
+			method="get">
+			<input type=text
+				name="freeword"
+				placeholder="検索">
+			<input type="submit"
+				value="検索">
+		</form>
+		</div>
+		<div class="container">
+		<div class="side_menu">
+		<h3>
+			<a href="ArticleList.html">記事一覧
+			</a>
+			<a href="">記事登録
+			</a>
+			<a href="">ユーザ一覧
+			</a>
+			<a href="">ユーザ情報
+			</a>
+		</h3>
+		</div>
+		<div class="main">
+		<h3 class="title center">コメント編集
+		</h3>
+		<p>何番目のコメント<select name="category">
+						<option selected>
+						<option value="1">1
+						<option value="2">2
+						<option value="3">3
+						</select> 
+		<p><form action="ArticleDetail.html"
+				 method="get">
+                   <textarea name="Editcomment"
+					style="width:800px"maxlength="140" 
+					rows=4>ここでコメントを編集してください（maxlength140) </textarea>
+                   <p> <input type="submit" value="完了">  <input type="reset" value="リセット">    <INPUT type="button" onClick='history.back();' value="戻る">
+                   </pre>
+		</form>
+		</div>
+		</div>
+		</div>
+		<div class="footer">
+		<h3>@ 2016Project
+		</h3>
+		</div>
+		</div>
+	</body>
+</html>

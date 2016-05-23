@@ -1,0 +1,42 @@
+author endo 05/23
+
+
+
+
+
+
+div.inline{
+  display: inline-block;
+  width: 150px;
+  border: solid 1px;
+  font-family:monospace;
+}
+div.temp{
+  width:800px;
+}
+
+div.list a:hover {color:#FF0000; background:#AA0000;}
+
+
+/*
+main‚Ìwidth‚Í1000px‚Ì‚Í‚¸‚È‚Ì‚É‚È‚ñ‚©‚¨‚©‚µ‚¢“®‚«‚·‚é‚Ì‚ÅŽb’è“I‚É‚±‚ê‚Å
+ƒJƒeƒSƒŠ‚ª“®‚©‚È‚¢
+*/
+td.title{
+width:500px
+}
+
+td.link{
+width:400px
+}
+
+td.info{
+width:500px
+}
+
+//‚±‚êƒJƒeƒSƒŠ
+td.ct{
+width:100px
+}
+.ArticleList{border-collapse: collapse;
+border:1px solid;}
