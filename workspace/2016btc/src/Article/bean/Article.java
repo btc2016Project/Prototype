@@ -14,12 +14,13 @@ public class Article {
 	private String article_url;
 	private String article_category;
 	private int regist_user_id;
+	private String article_comment;
 
 	public Article() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
-	public Article(int article_id,String article_title,String article_url,String article_category,int regist_user_id,String regist_date) {
+	public Article(int article_id,String article_title,String article_url,String article_category,int regist_user_id,String regist_date,String article_comment) {
 		// TODO 自動生成されたコンストラクター・スタブ
 		this.article_id=article_id;
 		this.article_title=article_title;
@@ -27,6 +28,8 @@ public class Article {
 		this.article_category=article_category;
 		this.regist_user_id=regist_user_id;
 		this.regist_date =regist_date;
+		this.article_comment =article_comment;
+
 	}
 
 
@@ -92,6 +95,14 @@ public class Article {
 	public static <T> T autoCast(Object obj) {
 	    T castObj = (T) obj;
 	    return castObj;
+	}
+
+	public String getArticle_comment() {
+		return article_comment;
+	}
+
+	public void setArticle_comment(String article_comment) {
+		this.article_comment = article_comment;
 	}
 
 }

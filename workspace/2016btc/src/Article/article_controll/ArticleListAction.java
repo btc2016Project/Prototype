@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Article.article_model.FetchArticleList;
+
 /**
  *@author aoyama 05/14
  *Servlet implementation class ArticleListAction
@@ -25,12 +27,9 @@ public class ArticleListAction extends HttpServlet {
 
 		RequestDispatcher requestDispatcher;
 		if (request.getParameterNames() != null) {
-			// データベース接続サーブレットにフォワード
-			requestDispatcher = request.getRequestDispatcher("/FetchArticleList");
-			requestDispatcher.forward(request, response);
-		} else {
-			// パラメータの引き渡しがなければ、全一覧にフォワード
-			requestDispatcher = request.getRequestDispatcher("/jsp_html/ArticleList.jsp");
+
+			FetchArticleList.searchArticleList(request, response);
+			requestDispatcher = request.getRequestDispatcher("/Article/ArticleList.jsp");
 			requestDispatcher.forward(request, response);
 		}
 	}

@@ -1,79 +1,105 @@
-<%--@author aoyama 05/14 --%>
+<!--@author 遠藤 5/23 -->
 
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ page import="Article.bean.Article"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <html>
 <head>
-<link
-	href="<%=request.getContextPath()%>/Article/stylesheet/ArticleStyle.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="<%=request.getContextPath()%>/Article/stylesheet/MainListStyle.css"
-	rel="stylesheet" type="text/css">
-<title>includeテスト</title>
+<meta charset="utf-8" />
+<link href="stylesheet/ArticleStyle.css" rel="stylesheet"
+	type="text/css">
+<link href="stylesheet/MainListStyle.css" rel="stylesheet"
+	type="text/css">
+<title>indexテスト</title>
 </head>
 <body>
 	<div class="contents">
-		<%@ include file="template/Header.jsp"%>
+		<div class="header">
+			<h1>
+				<a href="index.html">2016Project </a>
+			</h1>
+			<form class="top_search" action="ArticleList1.html" method="get">
+				<input type=text name="freeword" placeholder="検索"> <input
+					type="submit" value="検索">
+			</form>
+		</div>
 		<div class="container">
-			<%@ include file="template/SideMenu.jsp"%>
+			<div class="side_menu">
+				<h3>
+					<a href="ArticleList.html">記事一覧 </a> <a href="">記事登録 </a> <a
+						href="">ユーザ一覧 </a> <a href="">ユーザ情報 </a>
+				</h3>
+			</div>
 			<div class="main">
-				<h2>記事一覧</h2>
+				<h3 class="title">記事検索</h3>
 				<div class="search">
-					<h3 class="title">記事検索</h3>
-					<form action="<%=request.getContextPath()%>/ArticleListAction"
-						method="get">
+					<form action="ArticleList1.html" method="get">
 						<p>
-							<select name="category">
+							<u>分類 </u> <select name="category">
 								<option selected>
 								<option value="Java">Java
 								<option value="Oracle">Oracle
 								<option value="Others">Others
-							</select> フリーワード:<input type="text" name="freeword" placeholder="検索">
+							</select>
+							<!--30文字以内でテキストボックスの横幅は20（デフォ） -->
+							<u>フリーワード </u>: <input type="text" name="freeword" size="20"
+								maxlength="30" placeholder="検索">
 						</p>
-						<input type="submit" value="検索"><input type="reset"
+						<input type="submit" value="検索"> <input type="reset"
 							value="リセット">
 					</form>
+					<HR>
 				</div>
 				<div>
-
+					<h3>記事一覧（ｎ件中4件表示）</h3>
 					<%
-						List<Article> article = (ArrayList) request.getAttribute("article");
+						List<Article> list = (ArrayList) request.getAttribute("article");
 					%>
-					<table  class="ArticleList">
+					<table class="ArticleList">
+						<h2></h2>
 						<thead>
-							<tr>
-								<td>タイトル</td>
-								<td>リンク</td>
-								<td>登録情報</td>
-								<td>カテゴリ</td>
-							</tr>
+							<!--見出しにしました-->
+							<th>タイトル</th>
+							<th>リンク</th>
+							<th>登録情報</th>
+							<th>カテゴリ</th>
 						</thead>
 						<tbody>
-							<%
-								for (Article list : article) {
-							%>
-							<tr>
-								<td class="ArticleList"><%=list.getArticle_title()%></td>
-								<td class="ArticleList"><a href=<%=list.getArticle_url()%>><%=list.getArticle_url()%></a></td>
-								<td class="ArticleList"><%=list.getRegist_user_id()%><br> <%=list.getRegist_date()%></td>
-								<td class="ArticleList"><%=list.getArticle_category()%></td>
-							</tr>
-							<%
-								}
-							%>
+							<!-- ここスクロールバー入れるかどうするか
+						どっちにしても何個で？縦がどのくらいで？1ページに収めるかを決めてない-->
+							<c:forEach var="article" items="list">
+								<tr>
+									<!--それぞれの項目ごとに横幅を決めてます（幅は要検討）
+							一番上だけにつけてますが深い意味はありません-->
+									<td class="title ArticleList">適当なの</td>
+									<td class="link ArticleList"><a href="ArticleDetail.html" />ArticleDetail.html
+									</td>
+									<td class="info ArticleList">${article.user_name}
+										<br> <br> <br></td>
+									<td class="ct ArticleList">${article.article_category}
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
-
-
-
+				</div>
+				<div class="center">
+					<p>
+						<input type="button" value="最初のページへ" onClick="location.href='';">1
+						<a href="">2 </a> <a href="">3 </a> <input type="button"
+							value="最後のページへ" onClick="location.href='';">
+					</p>
 				</div>
 			</div>
 		</div>
-		<%@ include file="template/Footer.jsp"%>
+	</div>
+	<div class="footer">
+		<h3>@ 2016Project</h3>
+	</div>
 	</div>
 </body>
 </html>

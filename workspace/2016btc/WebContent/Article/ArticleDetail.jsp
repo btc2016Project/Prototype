@@ -1,43 +1,140 @@
-<%--@author aoyama 05/14 --%>
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--@author 遠藤 5/23 -->
 <html>
-<head>
-<link
-	href="<%=request.getContextPath()%>/Article/stylesheet/ArticleStyle.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="<%=request.getContextPath()%>/Article/stylesheet/MainListStyle.css"
-	rel="stylesheet" type="text/css">
-<title>includeテスト</title>
-</head>
-<body>
-	<div class="contents">
-		<%@ include file="template/Header.jsp"%>
-		<div class="container">
-			<%@ include file="template/SideMenu.jsp"%>
-			<div class="main">
-			<h3>記事詳細</h3>
-			<p>タイトル</p>
-
-			<p>登録日/登録者    分類</p>
-
-			<p>記事概要</p>
-
-			<p>コメント</p>
+	<head>
+		<meta charset="utf-8" />
+		<link href="stylesheet/ArticleStyle.css"
+			rel="stylesheet"
+			type="text/css">
+		<link href="stylesheet/MainListStyle.css"
+			rel="stylesheet"
+			type="text/css">
+		<title>indexテスト
+		</title>
+	</head>
 
 
-			<form>
 
-			<input type="submit">
-			</form>
-			<a href="javascript:history.back();">戻る</a>
-			</div>
+
+
+
+
+
+
+
+	<body>
+		<div class="contents">
+		<div class="header">
+		<h1>
+			<a href="index.html">2016Project
+			</a>
+		</h1>
+		<form class="top_search"
+			action="ArticleList1.html"
+			method="get">
+			<input type=text
+				name="freeword"
+				placeholder="検索">
+			<input type="submit"
+				value="検索">
+		</form>
 		</div>
-	</div>
-	<%@ include file="template/Footer.jsp"%>
-</body>
+		<div class="container">
+		<div class="side_menu">
+		<h3>
+			<a href="ArticleList.html">記事一覧
+			</a>
+			<a href="">記事登録
+			</a>
+			<a href="">ユーザ一覧
+			</a>
+			<a href="">ユーザ情報
+			</a>
+		</h3>
+		</div>
+		<div class="main">
+		<h3 class="title center">記事詳細
+		</h3>
+		<table border=1
+			width=800>
+			<tr>
+			<td>記事タイトル
+			</td>
+			<td width=600>test
+			</td>
+			</tr>
+			<tr>
+			<td>登録者
+			</td>
+			<td>whooooooo
+			</td>
+			</tr>
+			<tr>
+			<td>登録日
+			</td>
+			<td>12/24
+			</td>
+			</tr>
+			<tr>
+			<td>分類
+			</td>
+			<td>その他
+			</td>
+			</tr>
+			<tr>
+			<td>リンク
+			</td>
+			<td>
+			<a href="https://www.google.co.jp/">google
+			</td>
+			</tr>
+			<tr>
+			<td>記事概要
+			</td>
+			<td style="width:600px; height:80px;">
+			yahoo的な検索サイト
+			</td>
+			</tr>
+			<tr>
+			<td colspan=2 >
+			<form action="CommentEdit.html"
+				method="get">コメント
+				<input type="submit"
+					value="編集">
+				</td>
+				</tr>
+				<tr>
+				<td colspan=2 style="width:800px; height:100px;">
+				ここにコメントが上から順に並ぶ予定です<br>
+				日付とかコメントした人の名前とかも一緒に表示でいいかも？（遠藤）
+				</td>
+			</form>
+			<tr>
+			<td colspan=2>
+			<form action=""
+				method="get">コメント書き込み
+				</td>
+				</tr>
+				<tr>
+				<td colspan=2>
+				<textarea name="addcomment"
+					style="width:100%"maxlength="140"
+					rows="4"
+					placeholder="ここにコメントを書き込んでください（maxlength140）" ></textarea>
+					<!-- テキストエリアの中に文字入れるとplaceholderが見えなくなる　　↑ここの間-->
+			</table>
+			<input type="submit"
+				value="コメント投稿">
+			<INPUT type="button"
+				onClick='history.back();'
+				value="戻る">
+		</form>
+		</div>
+		</div>
+		</div>
+		<div class="footer">
+		<h3>@ 2016Project
+		</h3>
+		</div>
+		</div>
+	</body>
 </html>
-

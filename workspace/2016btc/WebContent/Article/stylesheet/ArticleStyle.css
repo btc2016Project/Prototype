@@ -1,5 +1,5 @@
-
-author aoyama 05/14
+ï»¿
+author endo 05/23
 
 
 
@@ -18,7 +18,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 }
 
 * {
-	font-family: ƒƒCƒŠƒI;
+	font-family: ãƒ¡ã‚¤ãƒªã‚ª;
 }
 
 .top_search {
@@ -51,6 +51,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 	border-right-width: 2px;
 	border-right-style: solid;
 	display: table-cell;
+	text-align:center;
 }
 
 .side_menu a {
@@ -59,6 +60,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 
 .main {
 	width: 1000px;
+	height: 450px;
 	left: 200px;
 	background-color: #E7E8F2;
 	display: table-cell;
@@ -66,13 +68,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 
 .title {
 	background-color: white;
-	margin-top: 30px;
+	margin-top: 0px;
 }
 
 .footer {
 	width: 1200px;
 	background-color: #3B5998;
 	height: 50px;
+	padding: 20px 0px 0px 0px;
 }
 
 .footer p {
@@ -81,6 +84,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
 }
 
 body {
-	font-family: 'ƒqƒ‰ƒMƒmŠpƒS Pro W3', 'Hiragino Kaku Gothic Pro', 'ƒƒCƒŠƒI', Meiryo,
-		'‚l‚r ‚oƒSƒVƒbƒN', sans-serif !important;
+	font-family: 'ãƒ’ãƒ©ã‚®ãƒè§’ã‚´ Pro W3', 'Hiragino Kaku Gothic Pro', 'ãƒ¡ã‚¤ãƒªã‚ª', Meiryo,
+		'ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯', sans-serif !important;
+}
+
+.verticaltop{
+vertical-align:top;
 }
