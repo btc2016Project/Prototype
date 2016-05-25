@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Article.article_model.FetchArticleList;
-
 /**
  * Servlet implementation class ArticleDetailAction
  */
@@ -26,11 +24,13 @@ public class ArticleDetailAction extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * 一覧画面から詳細画面に遷移するcontroller
+	 * データの制御はrequestを通してJSP同士が直接する。
 	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		FetchArticleList.searchArticleList(request, response);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("/Article/ArticleDetail.jsp");
 		requestDispatcher.forward(request, response);
 	}

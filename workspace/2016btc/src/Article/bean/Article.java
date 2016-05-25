@@ -16,7 +16,8 @@ public class Article {
 	private int regist_user_id;
 	private String article_comment;
 
-	public Article() {
+	//インスタンス化を禁止
+	private Article() {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 

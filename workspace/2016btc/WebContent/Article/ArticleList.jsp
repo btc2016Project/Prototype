@@ -10,9 +10,9 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<link href="stylesheet/ArticleStyle.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/Article/stylesheet/ArticleStyle.css" rel="stylesheet"
 	type="text/css">
-<link href="stylesheet/MainListStyle.css" rel="stylesheet"
+<link href="<%=request.getContextPath() %>/Article/stylesheet/MainListStyle.css" rel="stylesheet"
 	type="text/css">
 <title>indexテスト</title>
 </head>
@@ -22,7 +22,7 @@
 			<h1>
 				<a href="index.html">2016Project </a>
 			</h1>
-			<form class="top_search" action="ArticleList1.html" method="get">
+			<form class="top_search" action="<%=request.getContextPath() %>/ArticleSearchAction" method="get">
 				<input type=text name="freeword" placeholder="検索"> <input
 					type="submit" value="検索">
 			</form>
@@ -30,14 +30,14 @@
 		<div class="container">
 			<div class="side_menu">
 				<h3>
-					<a href="ArticleList.html">記事一覧 </a> <a href="">記事登録 </a> <a
+					<a href="<%=request.getContextPath() %>/ArticleListAction">記事一覧 </a> <a href="">記事登録 </a> <a
 						href="">ユーザ一覧 </a> <a href="">ユーザ情報 </a>
 				</h3>
 			</div>
 			<div class="main">
 				<h3 class="title">記事検索</h3>
 				<div class="search">
-					<form action="ArticleList1.html" method="get">
+					<form action="<%=request.getContextPath() %>/ArticleSearchAction" method="get">
 						<p>
 							<u>分類 </u> <select name="category">
 								<option selected>
@@ -57,33 +57,43 @@
 				<div>
 					<h3>記事一覧（ｎ件中4件表示）</h3>
 					<%
-						List<Article> list = (ArrayList) request.getAttribute("article");
+						List<Article> list = (ArrayList<Article>) request.getAttribute("article");
 					%>
 					<table class="ArticleList">
-						<h2></h2>
 						<thead>
 							<!--見出しにしました-->
+							<tr>
 							<th>タイトル</th>
 							<th>リンク</th>
 							<th>登録情報</th>
 							<th>カテゴリ</th>
+							</tr>
 						</thead>
 						<tbody>
 							<!-- ここスクロールバー入れるかどうするか
 						どっちにしても何個で？縦がどのくらいで？1ページに収めるかを決めてない-->
-							<c:forEach var="article" items="list">
-								<tr>
-									<!--それぞれの項目ごとに横幅を決めてます（幅は要検討）
-							一番上だけにつけてますが深い意味はありません-->
-									<td class="title ArticleList">適当なの</td>
-									<td class="link ArticleList"><a href="ArticleDetail.html" />ArticleDetail.html
-									</td>
-									<td class="info ArticleList">${article.user_name}
-										<br> <br> <br></td>
-									<td class="ct ArticleList">${article.article_category}
-									</td>
-								</tr>
-							</c:forEach>
+							<%
+								for (Article article : list) {
+							%>
+							<form action="<%=request.getContextPath()%>/ArticleDetailAction">
+							<tr>
+								<td class="ArticleList"><input type="submit" value="<%=article.getArticle_title()%>"></td>
+								<td class="ArticleList"><a href=<%=article.getArticle_url()%>><%=article.getArticle_url()%></a></td>
+								<td class="ArticleList"><%=article.getRegist_user_id()%><br> <%=article.getRegist_date()%></td>
+								<td class="ArticleList"><%=article.getArticle_category()%></td>
+							</tr>
+							<input type="hidden" name="id" value="<%=article.getArticle_id()%>"/>
+							<input type="hidden" name="title" value="<%=article.getArticle_title()%>"/>
+							<input type="hidden" name="category" value="<%=article.getArticle_category()%>"/>
+							<input type="hidden" name="url" value="<%=article.getArticle_url()%>"/>
+							<input type="hidden" name="data" value="<%=article.getRegist_date()%>"/>
+							<input type="hidden" name="userId" value="<%=article.getRegist_user_id()%>"/>
+							<input type="hidden" name="comment" value="<%=article.getArticle_comment()%>"/>
+							<%-- <input type="hidden" name="comment" value="<%=list.getArticle_title()%>"/> --%>
+							</form>
+							<%
+								}
+							%>
 						</tbody>
 					</table>
 				</div>

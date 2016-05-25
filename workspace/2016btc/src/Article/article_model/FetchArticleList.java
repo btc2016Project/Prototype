@@ -23,8 +23,56 @@ public class FetchArticleList {
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 * @throws SQLException
+	 * @throws ClassNotFoundException
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
+	 *      ArticleMasterから全件取得するメソッド
+	 *
+	 */
+
+	public static void searchAllArticle(HttpServletRequest request, HttpServletResponse response) throws SQLException, ClassNotFoundException{
+
+		Connection con = DBManager.getConn();
+
+		String sql = "SELECT * FROM `article_master` ";
+		PreparedStatement ps=con.prepareStatement(sql);
+		ResultSet rs = ps.executeQuery();
+
+		//取得した記事のいれもの
+		List<Article> list = new ArrayList<Article>();
+		while (rs.next()) {
+
+			int article_id = rs.getInt("article_id");
+			String article_title = rs.getString("article_title");
+			String article_url = rs.getString("article_url");
+			String article_category = rs.getString("article_category");
+			String regist_date = rs.getString("regist_date");
+			int regist_user_id = rs.getInt("regist_user_id");
+			String article_comment = rs.getString("article_comment");
+
+			//取得した記事を1件ずつlistに格納する
+			list.add(new Article(article_id, article_title, article_url, article_category, regist_user_id,
+					regist_date,article_comment));
+		}
+
+		//記事の入ったリストを返す
+		request.setAttribute("article", list);
+		rs.close();
+		ps.close();
+	}
+
+
+
+
+	/**
+	 * @param request
+	 * @param response
+	 * @throws ServletException
+	 * @throws IOException
+	 *
+	 * データ検索のメソッド
+	 * 与えられたパラメータによって、検索文を変更する
 	 */
 	public static void searchArticleList(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -34,6 +82,7 @@ public class FetchArticleList {
 		try {
 			Connection con = DBManager.getConn();
 
+			//送られてきたデータによってsql文を選択する
 			String sql = "SELECT * FROM `article_master` WHERE `article_title` LIKE ? AND `article_category`= ?";
 
 			String freeword = request.getParameter("freeword");
@@ -55,6 +104,7 @@ public class FetchArticleList {
 
 			ResultSet rs = ps.executeQuery();
 
+			//取得した記事の入れ物
 			List<Article> list = new ArrayList<Article>();
 			while (rs.next()) {
 
@@ -66,6 +116,7 @@ public class FetchArticleList {
 				int regist_user_id = rs.getInt("regist_user_id");
 				String article_comment = rs.getString("article_comment");
 
+				//取得した記事を一件ずつリストに格納
 				list.add(new Article(article_id, article_title, article_url, article_category, regist_user_id,
 						regist_date,article_comment));
 			}
@@ -85,7 +136,7 @@ public class FetchArticleList {
 
 	}
 
-	public static void fetchListByArticleId(HttpServletRequest request, HttpServletResponse response)
+/*	public static void fetchListByArticleId(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ClassNotFoundException {
 		Connection con = DBManager.getConn();
 		String sql = "SELECT * FROM `article_master` WHERE `article_id` = ?";
@@ -114,6 +165,6 @@ public class FetchArticleList {
 
 		rs.close();
 		ps.close();
-	}
+	}*/
 
 }

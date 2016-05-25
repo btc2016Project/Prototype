@@ -61,4 +61,23 @@
     <servlet-name>ArticleDetailAction</servlet-name>
     <url-pattern>/ArticleDetailAction</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ArticleSearchAction</display-name>
+    <servlet-name>ArticleSearchAction</servlet-name>
+    <servlet-class>Article.article_controll.ArticleSearchAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ArticleSearchAction</servlet-name>
+    <url-pattern>/ArticleSearchAction</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>EncodingFilter</display-name>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>common.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
