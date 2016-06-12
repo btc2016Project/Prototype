@@ -69,14 +69,14 @@ public class LoginServlet extends HttpServlet {
 
 	    if (rs.next() == true) {
 		// セッションオブジェクトに保存する
-		session.setAttribute("username", un);
+		//session.setAttribute("username", un);
 		session.setAttribute("password", pw);
 		// url (フォワード先の指定) ログイン後トップページへ
-		url = "/toppage.jsp";
+		url = "/User/toppage.jsp";
 	    } else {
 		// url (フォワード先の指定) ログイン失敗後 再度ログイン画面へ
 		session.setAttribute("errorStatusMiss", "NotAuth");
-		url = "/Login.jsp";
+		url = "/User/Login.jsp";
 	    }
 	    st.close();
 	    rs.close();
@@ -90,7 +90,7 @@ public class LoginServlet extends HttpServlet {
 	    // 入力チェックでミスなしの場合、urlで指定した遷移先へ
 	    if (url != null) {
 		RequestDispatcher dispatcher = request
-			.getRequestDispatcher(url);
+		.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	    }
 	}
