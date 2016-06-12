@@ -30,8 +30,7 @@
 		<div class="container">
 			<div class="side_menu">
 				<h3>
-					<a href="<%=request.getContextPath() %>/ArticleListAction">記事一覧 </a> <a href="">記事登録 </a> <a
-						href="">ユーザ一覧 </a> <a href="">ユーザ情報 </a>
+				<%@ include file="/Article/template/SideMenu.jsp"%>
 				</h3>
 			</div>
 			<div class="main">

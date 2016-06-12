@@ -1,10 +1,11 @@
-package pass;
+package User.webApplication;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 public class DB {
 /**
+ *
 * DBと接続する
 *
 * @return DBコネクション
@@ -13,10 +14,9 @@ public class DB {
 */
     public Connection getConn() throws ClassNotFoundException, SQLException {
         // JDBCドライバクラスをJVMに登録
-        Class.forName("oracle.jdbc.driver.OracleDriver");
+        Class.forName("com.mysql.jdbc.Driver");
         // DBへ接続
-        Connection conn = DriverManager.getConnection(
-                "jdbc:oracle:thin:@localhost:1521:XE","system", "systemsss");
+        java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/prototype?useUnicode=true&characterEncoding=utf8", "root", "");
         return conn;
         }
         /**

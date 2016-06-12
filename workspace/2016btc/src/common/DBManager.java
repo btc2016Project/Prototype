@@ -16,7 +16,7 @@ public class DBManager {
 	    	Class.forName("com.mysql.jdbc.Driver");
 
 			// MySQLに接続
-			java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/prototype?useUnicode=true&characterEncoding=utf8", "root", "");
+			java.sql.Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/prototype?useUnicode=true&characterEncoding=utf8", "root", "systemsss");
 			System.out.println("MySQLに接続できました。");
 
 	        return conn;

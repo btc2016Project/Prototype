@@ -4,9 +4,12 @@
 
 <html>
 <head>
-<link href="<%=request.getContextPath() %>/Article/stylesheet/ArticleStyle.css" rel="stylesheet"
-	type="text/css">
-<link href="<%=request.getContextPath() %>/Article/stylesheet/MainListStyle.css" rel="stylesheet"/>
+<link
+	href="<%=request.getContextPath()%>/Article/stylesheet/ArticleStyle.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="<%=request.getContextPath()%>/Article/stylesheet/MainListStyle.css"
+	rel="stylesheet" />
 <title>includeテスト</title>
 </head>
 <body>
@@ -15,37 +18,42 @@
 		<div class="container">
 			<%@ include file="template/SideMenu.jsp"%>
 			<form method="get" action="<%=request.getContextPath()%>/Echo">
-			<div class="main">
-				<h2>記事情報登録</h2>
-				<div>
-				<p>タイトル1</p>
-					<input type=text name="title1">
-				</div>
-				<div>
-				<p>タイトル2</p>
-					<input type=text name="title2">
-				</div>
-				<div>
-				<p>タイトル3</p>
-					<input type=text name="title3">
-				</div>
-				<div>
-				<p>タイトル4</p>
-					<input type=text name="title4">
-				</div>
-				<div>
-				<p>タイトル5</p>
-					<input type=text name="title5">
-				</div>
+				<div class="main">
+					<h3 class="title center">記事編集</h3>
+					<form action="ArticleConfirm.html" method="get">
 
-				<div class="confirm">
-				<input type="button" value="戻る">
-				<input type="submit" value="確認">
-				</form>
+                   <p>記事タイトル<input type="text" name="title"
+									size="100" placeholder="記事タイトル maxlength50" maxlength="50"></p>
+
+							<p>記事URL      <input type="text" name="url" size="100"
+									placeholder="記事url maxlength100" maxlength="100"></p>
+                   <!--上にそろえたかったけど何か無理-->
+
+							<p class="verticaltop">コメント      <textarea name="comment"
+									rows=5 cols="100" maxlength="100" placeholder="maxlength100"></textarea>
+									</p>
+
+							<p>分類            <select name="category">
+								<option selected>
+
+									<option value="Java">Java
+
+									<option value="Oracle">Oracle
+
+									<option value="Others">Others
+
+								</select>
+								</p>
+
+							<p> <input type="submit" value="確認">  <input
+									type="reset" value="リセット">    <INPUT type="button"
+									onClick='history.back();' value="戻る"></p>
+					</form>
 				</div>
-			</div>
 		</div>
-		<%@ include file="template/Footer.jsp"%>
+	</div>
+	<div class="footer">
+	<%@ include file="template/Footer.jsp"%>
 	</div>
 </body>
 </html>
