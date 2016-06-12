@@ -72,7 +72,7 @@ public class LoginServlet extends HttpServlet {
 		//session.setAttribute("username", un);
 		session.setAttribute("password", pw);
 		// url (フォワード先の指定) ログイン後トップページへ
-		url = "/User/toppage.jsp";
+		url = "/Article/index.jsp";
 	    } else {
 		// url (フォワード先の指定) ログイン失敗後 再度ログイン画面へ
 		session.setAttribute("errorStatusMiss", "NotAuth");
